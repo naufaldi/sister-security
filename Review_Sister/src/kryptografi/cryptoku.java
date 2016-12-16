@@ -9,10 +9,10 @@ package kryptografi;
  *
  * @author cynux
  */
-public class modulo26 {
-    public static void main(String[] args) {
-        String plainText="SISTER";
-        String secretKey = "SECRETKEY";
+public class cryptoku {
+   public static void main(String[] args) {
+        String plainText="FALDI";
+        String secretKey = "BLITAR";
         System.out.println("Plain Text before encryption"+ plainText);
         String encryptedText = encrypt(plainText, secretKey);
         System.out.println("Encript Text after encription"+encryptedText);
@@ -24,10 +24,21 @@ public class modulo26 {
         StringBuilder encryptedString = new StringBuilder();
         int encryptedInt;
         for (int i = 0; i < plainText.length(); i++){
+            System.out.print(plainText);
             int plainTextInt = (int) (plainText.charAt(i)- 'A');
+            System.out.println("");
+            System.out.print(plainTextInt);
             int secretKeyInt = (int) (secretKey.charAt(i)- 'A');
+            System.out.println("");
+            System.out.print(secretKeyInt);
             encryptedInt = (plainTextInt + secretKeyInt) % 26;
+            
+            
+            System.out.println("");
+            System.out.print(encryptedInt);
             encryptedString.append((char) ((encryptedInt) + (int) 'A'));
+            System.out.println("");
+            System.out.print(encryptedString);
             
         }
         return encryptedString.toString();
